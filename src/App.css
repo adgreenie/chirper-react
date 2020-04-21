@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+html {
+  background-color:#EFF0F1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  padding-top: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+section {
+  height:500px;
+  overflow: auto;
+  height:650px;
+}
+
+ul {
+  color:black;
+  margin-right:15%;
+  margin-left:15%;
+  text-align:center;
+  padding-right:10%;
+  padding-left:10%;
+  font-family:arial;
+  background-color:#EFF0F1;
+}
+
+ul>fas {
+  color:black;
+}
+
+li {
+  list-style:none;
+}
+
+button {
+  height:50px;
+}
+
+/* nav{
+  overflow:hidden;
+  position:fixed;
+} */
+
+h4 {
+  text-decoration:none;
+  
+}
+
+i {
+  z-index:10;
+  text-align:left;
+  color:black;
+}
+
+.cardButtons{
+  display:flex;
+  justify-content:space-around;
+  width: 100%;
+}
+
+.topNav{
+  position: fixed;
+  width: 100%;
+  /* margin-top:-20px; */
+  z-index: 10;
+}
+.fab{
+  color:white;
+  font-size: 40px;;
+}
+.bottomNav {
+  position: fixed;
+  bottom:0;
+  width: 100%;
+}
+.fas{
+color:white;
+}
+.vl {
+  border-left: 6px solid green;
+  height: 500px;
+}
+.vl {
+  border-right: 6px solid green;
+  height: 500px;
+}
+
+.chirpStyle:Hover{
+  background-color:gray;
+}
+
+.fa-hand-spock {
+  color:black;
+}
+
+.tablet{
+  display:none;
+}
+
+#name {
+  font-size:16px;
+  text-align:left;
+  margin:0;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+
+@media(min-width:321px){
+  .tablet{
+    display: block;
+    margin-left:10%;
+    margin-right:10%;
+    border: 2px;
+    border-color: rgba(red, green, blue, alpha)
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  /* .tablet:Hover{
+    background-color:gray;
+  } */
 }
