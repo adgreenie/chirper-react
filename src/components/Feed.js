@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Chirp from './Chirp'
 import { getAllChirps } from '../services/api-helper'
-import { formatDate } from '../services/formatDate'
 import '../App.css'
 import Update from './Update'
 
@@ -20,19 +19,7 @@ function Feed() {
 
 
     const allChirps = chirps.map((chirp, index) => {
-        return (
-            <>
-                <Chirp
-                    key={index}
-                    username={chirp.username}
-                    body={chirp.body}
-                    date={formatDate(chirp.date)}
-                    numLikes={chirp.numLikes}
-                    comments={chirp.comments}
-                    id={chirp._id}
-                />
-            </>
-        )
+        return <Chirp key={index} chirp={chirp} />
     })
 
     return (
