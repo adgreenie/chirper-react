@@ -4,14 +4,20 @@ import Feed from './Feed'
 import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 function Login(props) {
-    const stopLogin = () => {
-        // if({Login}) {
-        //     result =<Feed ?></Feed>
-        // }, else {  
-        //     result = {Login}
-        // }
+    //
+    //set state in order to get user info and password 
+    
+    // const stopLogin = () => {
+    //     // if({Login}) {
+    //     //     result =<Feed ?></Feed>
+    //     // }, else {  
+    //     //     result = {Login}
+    //     // }
+    // }
+    const handleChange = (event) => {
+        event.preventDefault();
+        console.log('handling change!');
     }
-
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Submitted!');
@@ -23,7 +29,7 @@ function Login(props) {
             <br />
             <Col>
                 <Col>
-                    <FormGroup>
+                    <FormGroup onChange={handleChange}>
                         <Input type="text" name="stat" id="exampleState" placeholder="
                 User Name" />
                     </FormGroup>
@@ -33,7 +39,7 @@ function Login(props) {
                     </FormGroup>
                     <Button onClick={handleSubmit}>
                     <Link to='/feed'>
-                        Login {Feed}
+                        Login {Form}
                     </Link>
                     </Button>
 
