@@ -18,11 +18,9 @@ function Chirp(props) {
     console.log('chirpcomments',comments)
 
     const handleDeleteChirp = async (id) => {
-        console.log('this is getting clicked')
-        const json = await deleteChirp(id)
-
+        console.log('this is getting clicked', props.id)
+        const json = await deleteChirp(props.id)
         console.log('when clicked we get ', json)
-
         if (json.status === 'success') {
             setDeleted(true)
         }
@@ -30,7 +28,7 @@ function Chirp(props) {
 
     return (
         <>
-            { !deleted && <> 
+            {!deleted && <>
                 <p id="name">{props.username}</p>
                 <p>{props.body}</p>
                 <p>Date:{props.date}</p>
@@ -44,7 +42,7 @@ function Chirp(props) {
                     {comments}
                 </ul>
                 <hr />
-            </> }
+            </>}
         </>
     )
 }

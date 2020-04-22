@@ -16,20 +16,21 @@ function Feed() {
         }
         makeAPICall()
     }, [])
-    
+
 
     const allChirps = chirps.map((chirp, index) => {
         return (
             <li key={index}  >
                 <Chirp
-                    key={index} 
+                    key={index}
                     username={chirp.username}
                     body={chirp.body}
                     date={formatDate(chirp.date)}
                     numLikes={chirp.numLikes}
                     comments={chirp.comments}
+                    id={chirp._id}
                 />
-            </li>
+        </li>
         )
     })
 
