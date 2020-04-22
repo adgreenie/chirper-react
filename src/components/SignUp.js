@@ -10,58 +10,59 @@ function Sign() {
 
     const handleUserName = e => {
         setUser(e.target.value)
+        console.log("sign up username", e)
     }
     const handlePassword = e => {
         setPassword(e.target.value)
+        console.log('sign up password', e)
     }
     const handleFirstChirp = e => {
         setFirstChirp(e.target.value)
+        console.log('sign up chirp ', e)
     }
 
-    const handleCreateUser = async () => {
-
-        const json = await createUser({
+    const handleCreateUser = e => {
+        e.preventDefault()
+        console.log(' Click when signing up', user + ' ' + password)
+        const json = createUser([{
             "username": user,
-            "pwd": password,
+            "password": password,
             "body": firstChirp
-        })
+        }])
     }
 
     return (
+
         <>
-            {/* <Form>
-                <Col>
-                    <Col>
-                        <Row form>
-                            <Col md={6}>
-                                <FormGroup>
-                                    <Label for="exampleEmail"></Label>
-                                    <Input type="email" name="email" id="exampleEmail" placeholder="Select a Username" />
-                                </FormGroup>
-                            </Col>
-                            <Col md={6}>
-                                <FormGroup>
-                                    <Label for="examplePassword"></Label>
-                                    <Input type="password" name="password" id="examplePassword" placeholder="Enter a Password" />
-                                </FormGroup>
-                            </Col>
-                        </Row>
-                        <FormGroup>
-                            <Label for="exampleAddress"></Label>
-                            <Input type="text" name="address" id="exampleAddress" placeholder="Paste a valid Image URL" />
-                        </FormGroup>
-                        <Button>Sign in</Button>
-                    </Col>
-                </Col>
-            </Form> */}
-            <div>
+            <Col>
+                <Form onSubmit={handleCreateUser}>
+                    <FormGroup>
+                        <Label for="exampleEmail">Thank For Joining Us!</Label>
+                        <Input type="text"
+                            name="email"
+                            id="exampleEmail"
+                            placeholder="Enter Your User Name"
+                            onChange={handleUserName} value={user} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="exampleText"></Label>
+                        <Input type="text" name="text" id="exampleText" placeholder="Enter a Strong Password"
+                            onChange={handlePassword} value={password}
+                        />
+
+                    </FormGroup>
+                    <Button color="info">Sign Up</Button>{' '}
+                </Form>
+            </Col>
+
+            {/* <div>
                 <form>
                     <input type='text' onChange={handleUserName} value={user} placeholder='Pick Your User Name' ></input>
                     <input type='text' onChange={handlePassword} value={password} placeholder="Pick a Strong Password"></input>
                     <input type='text' onChange={handleFirstChirp} value={firstChirp} placeholder="Write your first Chrip"></input>
                     <button onClick={handleCreateUser}>Sign Up</button>
                 </form>
-            </div>
+            </div> */}
         </>
 
     )

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaTrash } from 'react-icons/fa'
 import { deleteChirp } from '../services/api-helper'
 import Comment from './Comment'
+import Update from './Update'
 
 function Chirp(props) {
 
@@ -19,9 +20,7 @@ function Chirp(props) {
         console.log('this is getting clicked', props.id)
         const json = await deleteChirp(props.id)
         console.log('when clicked we get ', json)
-        if (json.status === 'success') {
-            setDeleted(true)
-        }
+
     }
 
     return (
@@ -31,6 +30,7 @@ function Chirp(props) {
                 <p>{props.body}</p>
                 <p>Date:{props.date}</p>
                 <p><i class="fas fa-hand-spock"></i> {props.numLikes}</p>
+
                 <FaTrash
                     onClick={() => handleDeleteChirp(props._id)}
                 />
