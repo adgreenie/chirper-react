@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import { FaTrash } from 'react-icons/fa'
-import { deleteChirp } from '../services/api-helper'
+import { deleteChirp, getChirpById, updateChirp } from '../services/api-helper'
 import Comment from './Comment'
+import { formatDate } from '../services/formatDate'
 
-function Chirp(props) {
+function Chirp({ chirp }) {
 
     const [deleted, setDeleted] = useState(false)
+    const [liked, setLiked] = useState(false)
+    const [numLikes, setNumLikes] = useState(chirp.numLikes)
 
-    const comments = props.comments.map((comment, i) => {
+    const date = formatDate(chirp.date)
+
+    const comments = chirp.comments.map((comment, i) => {
         return (
             <li>
                 <Comment key={i} id={comment} />
@@ -17,11 +22,20 @@ function Chirp(props) {
     })
     console.log('chirpcomments',comments)
 
-    const handleDeleteChirp = async (id) => {
-        console.log('this is getting clicked', props.id)
-        const json = await deleteChirp(props.id)
-        console.log('when clicked we get ', json)
-        if (json.status === 'success') {
+    const handleLike = () => {
+        console.log('Chirp - handleLike - liked', liked)
+        if (!liked) {
+            chirp.numLikes++
+            setNumLikes(chirp.numLikes)
+            setLiked(true)
+            updateChirp(chirp._id, chirp)
+        }
+    }
+
+    const handleDelete = () => {
+        console.log('Chirp - handleDelete - deleted', deleted)
+        if (!deleted) {
+            deleteChirp(chirp._id)
             setDeleted(true)
         }
     }
@@ -29,14 +43,18 @@ function Chirp(props) {
     return (
         <>
             {!deleted && <>
-                <p id="name">{props.username}</p>
-                <p>{props.body}</p>
-                <p>Date:{props.date}</p>
-                <p><i class="fas fa-hand-spock"></i> {props.numLikes}</p>
-                
-                <FaTrash
-                    onClick={() => handleDeleteChirp(props._id)}
-                />
+                <p id="name">{chirp.username}</p>
+                <p>{chirp.body}</p>
+                <p>Date: {date[0]}</p>
+                <p>Time: {date[1]}</p>
+                <p>
+                    <button onClick={handleLike}>
+                        <i className="fas fa-hand-spock"></i>
+                    </button> {numLikes}
+                </p>
+                <button><FaTrash
+                    onClick={handleDelete}
+                /></button>
                 <hr />
                 <ul>
                     {comments}
