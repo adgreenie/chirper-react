@@ -4,6 +4,7 @@ import { deleteChirp, getChirpById, updateChirp } from '../services/api-helper'
 import Comment from './Comment'
 import { formatDate } from '../services/formatDate'
 
+
 function Chirp({ chirp }) {
 
     const [deleted, setDeleted] = useState(false)
@@ -19,6 +20,7 @@ function Chirp({ chirp }) {
             </li>
         )
     })
+
 
     const handleLike = () => {
         console.log('Chirp - handleLike - liked', liked)
@@ -36,11 +38,13 @@ function Chirp({ chirp }) {
             deleteChirp(chirp._id)
             setDeleted(true)
         }
+
     }
 
     return (
         <>
             {!deleted && <>
+
                 <p id="name">{chirp.username}</p>
                 <p>{chirp.body}</p>
                 <p>Date: {date[0]}</p>
@@ -53,6 +57,7 @@ function Chirp({ chirp }) {
                 <button><FaTrash
                     onClick={handleDelete}
                 /></button>
+
                 <hr />
                 <ul>
                     {comments}
