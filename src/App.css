@@ -9,7 +9,6 @@ main {
 section {
   height:500px;
   overflow: auto;
-  height:650px;
 }
 
 ul {
@@ -20,8 +19,10 @@ ul {
   padding-right:10%;
   padding-left:10%;
   font-family:arial;
-  background-color:#EFF0F1;
+  
+  
 }
+
 
 ul>fas {
   color:black;
@@ -84,10 +85,6 @@ color:white;
   height: 500px;
 }
 
-.chirpStyle:Hover{
-  background-color:gray;
-}
-
 .fa-hand-spock {
   color:black;
 }
@@ -104,6 +101,15 @@ color:white;
   font-weight: 900;
 }
 
+h6 {
+  text-transform: capitalize;
+  font-size:14px;
+  color:blue;
+  font-variant: small-caps ;
+}
+
+
+
 @media(min-width:321px){
   .tablet{
     display: block;
@@ -112,7 +118,5 @@ color:white;
     border: 2px;
     border-color: rgba(red, green, blue, alpha)
   }
-  /* .tablet:Hover{
-    background-color:gray;
-  } */
+  
 }
