@@ -20,7 +20,7 @@ function Feed() {
 
     const allChirps = chirps.map((chirp, index) => {
         return (
-            <li>
+            <li key={index}  >
                 <Chirp
                     key={index} 
                     username={chirp.username}
