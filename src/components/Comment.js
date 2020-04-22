@@ -11,17 +11,17 @@ function Comment({id}) {
             setComment(resp.body)
             setDate(resp.date)
             setName(resp.username)
-            console.log('getCommentById', resp)
+            // console.log('getCommentById', resp)
         }
         makeAPICall()
     }, [])
 
-    console.log('chirpcommnets - ', id)
+    // console.log('chirpcommnets - ', id)
    
     return (
         <div className="chirpStyle">
             <h6>   {name}</h6>
-            <p> Comment: {comment} </p>
+            <p> <i className="fa fa-comments"> {comment} </i> </p>
             <p>   Date: {date}</p>
         </div>
     )

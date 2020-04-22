@@ -35,6 +35,7 @@ function Chirp(props) {
                 <p>{props.body}</p>
                 <p>Date:{props.date}</p>
                 <p><i class="fas fa-hand-spock"></i> {props.numLikes}</p>
+                
                 <FaTrash
                     onClick={() => handleDeleteChirp(props._id)}
                 />
