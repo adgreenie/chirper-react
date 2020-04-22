@@ -7,7 +7,7 @@ import { Button } from "reactstrap";
 
 function App() {
   return (
-    <body>
+    <>
       <Link to="/feed">
         <header >
           <Button className="topNav" color="secondary">
@@ -17,7 +17,7 @@ function App() {
       </Link>
       <Main />
       <Footer />
-    </body>
+    </>
   );
 }
 
