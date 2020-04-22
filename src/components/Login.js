@@ -1,10 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from "react-router-dom"
-
+import Feed from './Feed'
 import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-function Login() {
+function Login(props) {
+    const stopLogin = () => {
+        // if({Login}) {
+        //     result =<Feed ?></Feed>
+        // }, else {  
+        //     result = {Login}
+        // }
+    }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Submitted!');
+      }
+    
     return (
         <>
             <br />
@@ -19,9 +31,11 @@ function Login() {
 
                         <Input type="text" name="stat" id="exampleState" placeholder="Password" />
                     </FormGroup>
+                    <Button onClick={handleSubmit}>
                     <Link to='/feed'>
-                        <Button>Login</Button>
+                        Login {Feed}
                     </Link>
+                    </Button>
 
                 </Col>
             </Col>
