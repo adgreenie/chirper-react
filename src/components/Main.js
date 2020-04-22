@@ -11,22 +11,9 @@ import '../App.css'
 function Main() {
   return (
     <main>
-      {/* <div className="tablet">
-          <Col>
-              <Form>
-                  <FormGroup>
-                      <Label for="exampleEmail">Chirp Away</Label>
-                      <Input type="text" name="email" id="exampleEmail" placeholder="Name of Chirp" />
-                  </FormGroup>
-                  <FormGroup>
-                      <Label for="exampleText"></Label>
-                      <Input type="textarea" name="text" id="exampleText" placeholder="Chirp Here" />
-                  </FormGroup>
-                  <Button color="warning">Chirp IT out</Button>{' '}
-              </Form>
-          </Col>
-      </div> */}
-      <ChirpForm />
+      <div className="tablet">
+        <ChirpForm/>
+      </div>
       <section>
           <Route exact path="/feed" component={Feed} />
           <Route exact path="/create" component={ChirpForm} />

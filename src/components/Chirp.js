@@ -17,9 +17,11 @@ function Chirp({ chirp }) {
         return (
             <li>
                 <Comment key={i} id={comment} />
+                
             </li>
         )
     })
+    console.log('chirpcomments',comments)
 
 
     const handleLike = () => {
