@@ -2,21 +2,28 @@ import React, { useEffect, useState } from 'react'
 import {
     Card, Col, CardImg, CardTitle, CardText,
     CardSubtitle, CardBody, Row
-} from 'reactstrap';
-import { getUserByUsername } from '../services/api-helper';
+} from 'reactstrap'
+import Chirp from './Chirp'
+import { getUserByUsername, getChirpsByUsername } from '../services/api-helper'
 
 function Userpage(props) {
   const [user, setUser] = useState([]);
-  const [noUser, setNoUser] = useState(false);
+  const [chirps, setChirps] = useState([]);
   const username = props.match.params.user;
 
   useEffect(() => {
     const makeAPICall = async () => {
-      const resp = await getUserByUsername(username);
-      setUser(resp);
+      const userResp = await getUserByUsername(username);
+      const chirpResp = await getChirpsByUsername(username);
+      setUser(userResp);
+      setChirps(chirpResp);
     };
-    username ? makeAPICall() : setNoUser(true);
+    username ? makeAPICall() : setUser(false);
   }, []);
+
+    const userChirps = chirps ? chirps.map((chirp, index) => {
+        return <Chirp key={index} chirp={chirp} />;
+    }) : ''
 
   return (
     <>
@@ -42,7 +49,7 @@ function Userpage(props) {
           <Col>
             <Row></Row>
             <Card body outline color="danger">
-              {/*put chirps here*/}
+              {userChirps}
             </Card>
           </Col>
         </div>
@@ -51,4 +58,4 @@ function Userpage(props) {
   );
 }
 
-export default Userpage
+export default Userpage;

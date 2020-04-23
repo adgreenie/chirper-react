@@ -3,9 +3,14 @@ import { FaTrash } from 'react-icons/fa'
 import { deleteChirp, getChirpById, updateChirp } from '../services/api-helper'
 import Comment from './Comment'
 import { formatDate } from '../services/formatDate'
+import CommentForm from './CommentForm'
+import { Navbar, NavbarBrand, Button, UncontrolledPopover, PopoverBody } from "reactstrap";
 
 
 function Chirp({ chirp }) {
+
+    const [popoverOpen, setPopoverOpen] = useState(false);
+    const toggle = () => setPopoverOpen(!popoverOpen);
 
     const [deleted, setDeleted] = useState(false)
     const [liked, setLiked] = useState(false)
@@ -14,9 +19,10 @@ function Chirp({ chirp }) {
     const date = formatDate(chirp.date)
 
     const comments = chirp.comments.map((comment, i) => {
+
         return <Comment key={i} id={comment} />
+
     })
-    // console.log('chirpcomments',comments)
 
 
     const handleLike = () => {
@@ -51,13 +57,38 @@ function Chirp({ chirp }) {
                         <i className="fas fa-hand-spock"></i>
                     </button> {numLikes}
                 </p>
+
+
+                <button
+                    id="Popover2"
+                    type="button"
+                >Add Comment
+                    <UncontrolledPopover
+                        trigger="legacy"
+                        placement="top"
+                        isOpen={popoverOpen}
+                        target="Popover2"
+                        toggle={toggle}
+                    >
+                        <PopoverBody>
+                            <CommentForm />
+                        </PopoverBody>
+                    </UncontrolledPopover>
+                </button>
+
+                <br />
                 <button><FaTrash
                     onClick={handleDelete}
                 /></button>
 
+
                 <hr />
                 <ul>
+
+
                     {comments}
+
+
                 </ul>
                 <hr />
             </>}
