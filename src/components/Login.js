@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Feed from "./Feed";
 import { Col, Button, Form, FormGroup, Input } from "reactstrap";
-import { getAllUsers, getUserByUsername } from "../services/api-helper";
+import { getAllUsers, getUserByUsername, validateUser } from "../services/api-helper";
 import { AppContext } from "../App";
 
 function Login() {
