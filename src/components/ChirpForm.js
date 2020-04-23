@@ -6,11 +6,15 @@ function ChirpForm() {
 
     const [username, setUserName] = useState("")
     const [chirp, setChirp] = useState([])
+    const [newuser, setNewUser] = useState("")
 
-    const handleUserName = e => {
+    let handleUserName = e => {
         setUserName(e.target.value)
         console.log('handle username', e)
+        setNewUser(e.target.value)
     }
+
+
 
     const handleChirp = e => {
         setChirp(e.target.value)
@@ -21,10 +25,16 @@ function ChirpForm() {
         e.preventDefault()
         console.log('returned json from click', username + chirp)
         const json = createChirp([{
-            "username": username,
+            "username": newuser,
             "body": chirp
         }])
+        const resp = createUser({
+            "username": username
+        })
     }
+
+
+
 
     return (
 
@@ -36,7 +46,8 @@ function ChirpForm() {
                         name="email"
                         id="exampleEmail"
                         placeholder="User"
-                        onChange={handleUserName} value={username} />
+                        onChange={handleUserName}
+                        value={username} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="exampleText"></Label>
