@@ -2,59 +2,71 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Feed from "./Feed";
 import { Col, Button, Form, FormGroup, Input } from "reactstrap";
-
-function Login(props) {
+// import { createUser } from '../services/api-helper'
+function Login() {
   //
   //set state in order to get user info and password
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState({
+    name:"",
+    password:""
+  });
   
-  const validateUser = (userName, Password) => {
 
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    
+    const userInput = e.target.value;
+    console.log('userInput',userInput)
+    setUserName({
+      ...userName,
+      // name is a variable, to show that it is a variable we tell JS to first get the value of the variable and replace the variable
+      [name]: value
+
+    })
   }
-
-  const handleChange = (event) => {
-    event.preventDefault();
-    console.log("handling change!");
-    const user = event.target.value;
-    setUserName(user);
-  };
-  const handleSubmit=(event)=>{
-    event.preventDefault();
-    console.log("Login - event",event);
-    // validateUser()
+  
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log("Login - userName",userName);
   };
 
+  
+console.log(userName)
   return (
     <>
       <br />
       <br />
       <Col>
         <Col>
-        {/* <Form onSubmit={handleSubmit}> */}
-            <FormGroup onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} >
+            <FormGroup>
               <Input
                 type="text"
-                name="stat"
+                name="name"
                 id="exampleState"
                 placeholder="
                 User Name"
                 onChange={handleChange}
-                value={userName}
+                value= {userName.name}
               />
             </FormGroup>
             <FormGroup>
               <Input
                 type="text"
-                name="stat"
+                name="password"
                 id="exampleState"
                 placeholder="Password"
+                onChange={handleChange}
+                value={userName.password}
               />
             </FormGroup>
-            <Button type="submit" onClick={handleSubmit}>
-              <Link to="/feed">Login {Form}</Link>
+            <Button>
+              Submit
             </Button>
             
-            {/* </Form> */}
+            </Form>
         </Col>
       </Col>
      
