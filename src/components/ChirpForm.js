@@ -43,7 +43,6 @@ function ChirpForm() {
                     <Input type="textarea" name="text" id="exampleText" placeholder="Chirp Here"
                         onChange={handleChirp} value={chirp}
                     />
-
                 </FormGroup>
                 <Button color="warning">Chirp IT out</Button>{' '}
             </Form>

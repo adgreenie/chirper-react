@@ -9,7 +9,7 @@ export const AppContext = createContext()
 
 function App() {
 
-  const [user, setUser] = useState('adam')
+  const [user, setUser] = useState('')
 
   return (
     <>

@@ -14,12 +14,7 @@ function Chirp({ chirp }) {
     const date = formatDate(chirp.date)
 
     const comments = chirp.comments.map((comment, i) => {
-        return (
-            <li>
-                <Comment key={i} id={comment} />
-                
-            </li>
-        )
+        return <Comment key={i} id={comment} />
     })
     // console.log('chirpcomments',comments)
 
