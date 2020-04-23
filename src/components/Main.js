@@ -16,7 +16,7 @@ function Main() {
           <Route exact path="/" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/create" component={ChirpForm} />
-          {/* <Route path="/feed" component={Feed} /> */}
+          <Route path="/feed" component={Feed} />
           <Route
             path="/user/:user"
             render={routerProps => <Userpage {...routerProps} />}
