@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Button, Nav, NavbarBrand , Col, Form, Label, Input, FormGroup} from "reactstrap";
+import { Navbar, Button, Nav, NavbarBrand, Col, Form, Label, Input, FormGroup } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Feed from "./Feed";
 import SignUp from "./SignUp";
@@ -15,10 +15,10 @@ function Main() {
         <ChirpForm/>
       </div>
       <section>
-          <Route exact path="/feed" component={Feed} />
-          <Route exact path="/create" component={ChirpForm} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/userpage" component={Userpage} />
+        <Route exact path="/feed" component={Feed} />
+        {/* <Route exact path="/create" component={ChirpForm} /> */}
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/userpage" component={Userpage} />
       </section>
     </main>
   )
