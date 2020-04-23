@@ -27,29 +27,29 @@ function ChirpForm() {
     }
 
     return (
-        <>
-            <Col>
-                <Form onSubmit={handleCreate}>
-                    <FormGroup>
-                        <Label for="exampleEmail">Chirp Away</Label>
-                        <Input type="text"
-                            name="email"
-                            id="exampleEmail"
-                            placeholder="User"
-                            onChange={handleUserName} value={username} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleText"></Label>
-                        <Input type="textarea" name="text" id="exampleText" placeholder="Chirp Here"
-                            onChange={handleChirp} value={chirp}
-                        />
 
-                    </FormGroup>
-                    <Button color="warning">Chirp IT out</Button>{' '}
-                </Form>
-            </Col>
+        <Col>
+            <Form onSubmit={handleCreate}>
+                <FormGroup>
+                    <Label for="exampleEmail">Chirp Away</Label>
+                    <Input type="text"
+                        name="email"
+                        id="exampleEmail"
+                        placeholder="User"
+                        onChange={handleUserName} value={username} />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="exampleText"></Label>
+                    <Input type="textarea" name="text" id="exampleText" placeholder="Chirp Here"
+                        onChange={handleChirp} value={chirp}
+                    />
 
-        </>
+                </FormGroup>
+                <Button color="warning">Chirp IT out</Button>{' '}
+            </Form>
+        </Col>
+
+
     )
 }
 

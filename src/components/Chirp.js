@@ -21,7 +21,7 @@ function Chirp({ chirp }) {
             </li>
         )
     })
-    console.log('chirpcomments',comments)
+    // console.log('chirpcomments',comments)
 
 
     const handleLike = () => {
