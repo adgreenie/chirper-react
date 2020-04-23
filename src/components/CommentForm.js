@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
 import { createComment } from '../services/api-helper'
+import { formatDate } from '../services/formatDate';
 
 function CommentForm() {
 
@@ -20,11 +21,13 @@ function CommentForm() {
 
     const handleCreateComment = e => {
         e.preventDefault()
+        e.target.reset()
         console.log(' Click when signing up', name + ' ' + comment)
         const json = createComment([{
             "username": name,
             "body": comment,
         }])
+
     }
 
     return (

@@ -116,6 +116,11 @@ h6 {
   font-variant: small-caps ;
 }
 
+.desktop{
+  display:none;
+  
+  width:80%;
+}
 
 
 
@@ -130,4 +135,14 @@ h6 {
     border-color: rgba(red, green, blue, alpha)
   }
   
+}
+
+@media (min-width :1024px){
+  .desktop{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    height:700px;
+    
+  }
 }
