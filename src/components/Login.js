@@ -1,39 +1,56 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
 import Feed from "./Feed";
 import { Col, Button, Form, FormGroup, Input } from "reactstrap";
-// import { createUser } from '../services/api-helper'
+import { getAllUsers, getUserByUsername } from '../services/api-helper'
+import {AppContext} from '../App';
+
 function Login() {
-  //
+  const app = useContext(AppContext)
   //set state in order to get user info and password
-  const [userName, setUserName] = useState({
-    name:"",
-    password:""
-  });
-  
+  const[userName,setUserName] = useState('');
+  const[userPassword,setUserPassword] = useState('');
+  // const [userName, setUserName] = useState({
+  //   name:"",
+  //   password:""
+  // });
 
+  // const handleChange = (e) => {
+  //   e.preventDefault();
+  //   const { name, value } = e.target;
+  //   const userInput = e.target.value;
+  //   console.log('userInput',userInput)
+  //   setUserName({
+  //     ...userName,
+  //     // name is a variable, to show that it is a variable we tell JS to first get the value of the variable and replace the variable
+  //     [name]: value
+  //   }) 
+  // }
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    
-    const userInput = e.target.value;
-    console.log('userInput',userInput)
-    setUserName({
-      ...userName,
-      // name is a variable, to show that it is a variable we tell JS to first get the value of the variable and replace the variable
-      [name]: value
-
-    })
+  const handleChangeName = userName => {
+    userName.preventDefault();
+    setUserName(userName.target.value)
+    console.log("userName",userName)
   }
-  
-  const handleSubmit=(e)=>{
-    e.preventDefault();
-    console.log("Login - userName",userName);
-  };
 
+    const handleChangePassword = userPassword => {
+      userPassword.preventDefault();
+      setUserPassword(userPassword.target.value)
+      console.log("userPassword",userPassword)
+    }
   
-console.log(userName)
+    const handleSubmit= async e=>{
+      e.preventDefault();
+      if(validateUser({"username":userName,"password":userPassword})){
+        const resp = await getUserByUsername(userName)
+        app.setUser(resp)
+      } 
+
+      
+      
+      }
+
+      
+// console.log(userName)
   return (
     <>
       <br />
@@ -48,8 +65,8 @@ console.log(userName)
                 id="exampleState"
                 placeholder="
                 User Name"
-                onChange={handleChange}
-                value= {userName.name}
+                onChange={handleChangeName}
+                // value= {userName.name}
               />
             </FormGroup>
             <FormGroup>
@@ -58,8 +75,8 @@ console.log(userName)
                 name="password"
                 id="exampleState"
                 placeholder="Password"
-                onChange={handleChange}
-                value={userName.password}
+                onChange={handleChangePassword}
+                // value={userName.password}
               />
             </FormGroup>
             <Button>
