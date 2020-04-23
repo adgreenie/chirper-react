@@ -57,9 +57,6 @@ function Chirp({ chirp }) {
                         <i className="fas fa-hand-spock"></i>
                     </button> {numLikes}
                 </p>
-                <button><FaTrash
-                    onClick={handleDelete}
-                /></button>
 
 
                 <button
@@ -79,7 +76,10 @@ function Chirp({ chirp }) {
                     </UncontrolledPopover>
                 </button>
 
-
+                <br />
+                <button><FaTrash
+                    onClick={handleDelete}
+                /></button>
 
 
                 <hr />
