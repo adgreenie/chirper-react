@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {
-    Card, Col, CardImg, CardTitle, CardText,
-    CardSubtitle, CardBody, Row
+  Card, Col, CardImg, CardTitle, CardText,
+  CardSubtitle, CardBody, Row
 } from 'reactstrap'
 import Chirp from './Chirp'
 import { getUserByUsername, getChirpsByUsername } from '../services/api-helper'
@@ -21,9 +21,9 @@ function Userpage(props) {
     username ? makeAPICall() : setUser(false);
   }, []);
 
-    const userChirps = chirps ? chirps.map((chirp, index) => {
-        return <Chirp key={index} chirp={chirp} />;
-    }) : ''
+  const userChirps = chirps ? chirps.map((chirp, index) => {
+    return <Chirp key={index} chirp={chirp} />;
+  }) : ''
 
   return (
     <>

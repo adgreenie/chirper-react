@@ -7,7 +7,7 @@ function Login(props) {
   //
   //set state in order to get user info and password
   const [userName, setUserName] = useState("");
-  
+
   const validateUser = (userName, Password) => {
 
   }
@@ -18,9 +18,9 @@ function Login(props) {
     const user = event.target.value;
     setUserName(user);
   };
-  const handleSubmit=(event)=>{
+  const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Login - event",event);
+    console.log("Login - event", event);
     // validateUser()
   };
 
@@ -30,34 +30,34 @@ function Login(props) {
       <br />
       <Col>
         <Col>
-        {/* <Form onSubmit={handleSubmit}> */}
-            <FormGroup onSubmit={handleSubmit}>
-              <Input
-                type="text"
-                name="stat"
-                id="exampleState"
-                placeholder="
+          {/* <Form onSubmit={handleSubmit}> */}
+          <FormGroup onSubmit={handleSubmit}>
+            <Input
+              type="text"
+              name="stat"
+              id="exampleState"
+              placeholder="
                 User Name"
-                onChange={handleChange}
-                value={userName}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Input
-                type="text"
-                name="stat"
-                id="exampleState"
-                placeholder="Password"
-              />
-            </FormGroup>
-            <Button type="submit" onClick={handleSubmit}>
-              <Link to="/feed">Login {Form}</Link>
-            </Button>
-            
-            {/* </Form> */}
+              onChange={handleChange}
+              value={userName}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Input
+              type="text"
+              name="stat"
+              id="exampleState"
+              placeholder="Password"
+            />
+          </FormGroup>
+          <Button type="submit" onClick={handleSubmit}>
+            <Link to="/feed">Login {Form}</Link>
+          </Button>
+
+          {/* </Form> */}
         </Col>
       </Col>
-     
+
     </>
   );
 }

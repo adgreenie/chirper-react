@@ -21,16 +21,18 @@ function ChirpForm() {
         console.log('handle chirp', e)
     }
 
-    const handleCreate = e => {
+    const handleCreate = async e => {
         e.preventDefault()
+
         console.log('returned json from click', username + chirp)
-        const json = createChirp([{
+        const resp = await createUser({
+            "username": username
+        })
+        const json = await createChirp([{
             "username": newuser,
             "body": chirp
         }])
-        const resp = createUser({
-            "username": username
-        })
+
     }
 
 

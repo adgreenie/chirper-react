@@ -1,10 +1,10 @@
-import React,{useEffect, useState} from 'react'
-import {getCommentById} from '../services/api-helper'
+import React, { useEffect, useState } from 'react'
+import { getCommentById } from '../services/api-helper'
 
-function Comment({id}) {
-    const [comment,setComment]= useState('')
-    const [date,setDate]= useState('')
-    const [name,setName]= useState('')
+function Comment({ id }) {
+    const [comment, setComment] = useState('')
+    const [date, setDate] = useState('')
+    const [name, setName] = useState('')
     useEffect(() => {
         const makeAPICall = async () => {
             const resp = await getCommentById(id)
@@ -17,7 +17,7 @@ function Comment({id}) {
     }, [])
 
     // console.log('chirpcommnets - ', id)
-   
+
     return (
         <li className="chirpStyle">
             <h6>   {name}</h6>
