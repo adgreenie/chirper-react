@@ -110,7 +110,7 @@ h6 {
 
 
 
-@media(min-width:321px){
+@media(max-width:321px){
   .tablet{
     display: block;
     margin-left:10%;
