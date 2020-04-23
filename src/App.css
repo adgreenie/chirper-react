@@ -109,7 +109,19 @@ color:white;
   font-weight: 900;
 }
 
+h6 {
+  text-transform: capitalize;
+  font-size:14px;
+  color:blue;
+  font-variant: small-caps ;
+}
+
+
+
+
+
 @media(min-width:321px){
+
   .tablet{
     display: block;
     margin-left:10%;
