@@ -36,6 +36,7 @@ function Feed() {
         <>
             <ul>
                 {allChirps}
+                this is the feed
             </ul>
             <br />
             <br />
