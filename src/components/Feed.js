@@ -7,33 +7,30 @@ import '../App.css'
 
 function Feed() {
     const [chirps, setChirps] = useState([])
+    const [allChirps, setAllChirps] = useState([])
 
     useEffect(() => {
         const makeAPICall = async () => {
             const resp = await getAllChirps()
             setChirps(resp)
-            console.log('getallchirps', resp)
-
+            setAllChirps(chirps.map((chirp, index) => {
+                return (
+                    <>
+                        <Chirp
+                            key={index}
+                            username={chirp.username}
+                            body={chirp.body}
+                            date={formatDate(chirp.date)}
+                            numLikes={chirp.numLikes}
+                            comments={chirp.comments}
+                            id={chirp._id}
+                        />
+                    </>
+                )
+            }))
         }
         makeAPICall()
     }, [])
-
-
-    const allChirps = chirps.map((chirp, index) => {
-        return (
-            <>
-                <Chirp
-                    key={index}
-                    username={chirp.username}
-                    body={chirp.body}
-                    date={formatDate(chirp.date)}
-                    numLikes={chirp.numLikes}
-                    comments={chirp.comments}
-                    id={chirp._id}
-                />
-            </>
-        )
-    })
 
     return (
         <>
