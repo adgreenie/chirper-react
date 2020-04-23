@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Feed from "./Feed";
 import { Col, Button, Form, FormGroup, Input } from "reactstrap";
-
+// import { createUser } from '../services/api-helper'
 function Login() {
   //
   //set state in order to get user info and password
@@ -10,59 +10,60 @@ function Login() {
     name:"",
     password:""
   });
-  console.log('proprs in login',props)
-  //This was handleFormInputs
+  
+
+
   const handleChange = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const { name, value } = e.target;
+    
+    const userInput = e.target.value;
+    console.log('userInput',userInput)
     setUserName({
       ...userName,
-      // i dont understand this step, how is name an array? 
+      // name is a variable, to show that it is a variable we tell JS to first get the value of the variable and replace the variable
       [name]: value
+
     })
   }
-
-  // const handleChange = (event) => {
-  //   event.preventDefault();
-  //   console.log("handling change!",props);
-  //   const user = event.target.value;
-  //   setUserName(user);
-  // };
+  
   const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log("Login - e",e);
+    console.log("Login - userName",userName);
   };
 
+  
+console.log(userName)
   return (
     <>
       <br />
       <br />
       <Col>
         <Col>
-        <Form onSubmit={e => handleSubmit(e)} >
+        <Form onSubmit={handleSubmit} >
             <FormGroup>
               <Input
                 type="text"
-                name="stat"
+                name="name"
                 id="exampleState"
                 placeholder="
                 User Name"
                 onChange={handleChange}
-                value={userName.name}
+                value= {userName.name}
               />
             </FormGroup>
             <FormGroup>
               <Input
                 type="text"
-                name="stat"
+                name="password"
                 id="exampleState"
                 placeholder="Password"
                 onChange={handleChange}
                 value={userName.password}
               />
             </FormGroup>
-            <Button onClick={handleSubmit}>
-              <Link to="/feed">Login {Form}</Link>
+            <Button>
+              Submit
             </Button>
             
             </Form>
