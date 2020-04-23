@@ -19,13 +19,12 @@ function Comment({id}) {
     // console.log('chirpcommnets - ', id)
    
     return (
-        <div className="chirpStyle">
+        <li className="chirpStyle">
             <h6>   {name}</h6>
             <p> <i className="fa fa-comments"> {comment} </i> </p>
             <p>   Date: {date}</p>
-        </div>
+        </li>
     )
-    
 }
 
 export default Comment
