@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { getCommentById } from '../services/api-helper'
-import { setDefaultBreakpoints } from 'react-socks'
+import React,{useEffect, useState} from 'react'
+import {getCommentById} from '../services/api-helper'
 
-function Comment({ id }) {
-    const [comment, setComment] = useState('')
-    const [username, setUsername] = useState('')
-    const [date, setDate] = useState('')
-
+function Comment({id}) {
+    const [comment,setComment]= useState('')
+    const [date,setDate]= useState('')
+    const [name,setName]= useState('')
     useEffect(() => {
         const makeAPICall = async () => {
             const resp = await getCommentById(id)
-            setUsername(resp.username)
             setComment(resp.body)
             setDate(resp.date)
-            console.log('getCommentById', resp)
+            setName(resp.username)
+            // console.log('getCommentById', resp)
         }
         makeAPICall()
     }, [])
 
-
-
-    console.log('chirpcommnets - ', id)
-
+    // console.log('chirpcommnets - ', id)
+   
     return (
         <div className="chirpStyle">
-            <h6>   {username} is Commenting </h6>
-            <p>  {comment} </p>
-            <p>   {date}</p>
+            <h6>   {name}</h6>
+            <p> <i className="fa fa-comments"> {comment} </i> </p>
+            <p>   Date: {date}</p>
         </div>
     )
-
+    
 }
 
 export default Comment
