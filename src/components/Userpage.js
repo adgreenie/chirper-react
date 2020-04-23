@@ -5,14 +5,14 @@ import {
 } from 'reactstrap';
 import { getUserByUsername } from '../services/api-helper';
 
-function Userpage() {
+function Userpage({ username }) {
 
     const [user, setUser] = useState([])
 
     useEffect(() => {
         const makeAPICall = async () => {
-            const resp = await getUserByUsername('adam')
-            console.log('get by username?', resp)
+            // const resp = await getUserByUsername(username)
+            const resp = 'adam'
             setUser(resp)
         }
         makeAPICall()
