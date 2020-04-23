@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Feed from "./Feed";
-import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Col, Button, Form, FormGroup, Input } from "reactstrap";
 
 function Login(props) {
   //

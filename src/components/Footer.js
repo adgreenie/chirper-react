@@ -1,12 +1,5 @@
 import React, { useState, useContext } from "react";
-import {
-  Navbar,
-  NavItem,
-  NavLink,
-  Button,
-  UncontrolledPopover,
-  PopoverBody,
-} from "reactstrap";
+import { Navbar, NavItem, NavLink, Button, UncontrolledPopover, PopoverBody } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ChirpForm from "./ChirpForm";
 import { AppContext } from "../App";
@@ -21,6 +14,11 @@ function Footer() {
   return (
     <footer className="bottomNav">
       <Navbar color="secondary" light expand="md">
+        <NavItem>
+          <NavLink href="/login">
+            <i className="fas fa-sign-in-alt" />
+          </NavLink>
+        </NavItem>
         <Button id="Popover1" type="button">
           <i className="fas fa-play">
             <UncontrolledPopover
@@ -37,15 +35,17 @@ function Footer() {
           </i>
         </Button>
         <NavItem>
-          <NavLink href={`/user/${app.user}`}>
-            <i className="fas fa-users" />
+          <NavLink href="/feed">
+            <i className="footer-logo fab fa-earlybirds"></i>
           </NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink href="/signup">
-            <i className="fas fa-sign-in-alt" />
-          </NavLink>
-        </NavItem>
+        {app.user && (
+          <NavItem>
+            <NavLink href={`/user/${app.user}`}>
+              <i className="fas fa-users" />
+            </NavLink>
+          </NavItem>
+        )}
       </Navbar>
     </footer>
   );

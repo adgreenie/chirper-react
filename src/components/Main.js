@@ -11,14 +11,11 @@ import "../App.css";
 function Main() {
   return (
     <main>
-      <div className="tablet">
-        <ChirpForm />
-      </div>
       <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="/feed" component={Feed} />
+        <Route exact path="/" component={SignUp} />
+        <Route path="/login" component={Login} />
         <Route path="/create" component={ChirpForm} />
-        <Route path="/signup" component={SignUp} />
+        <Route path="/feed" component={Feed} />
         <Route
           path="/user/:user"
           render={routerProps => <Userpage {...routerProps} />}

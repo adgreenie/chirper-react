@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Chirp from './Chirp'
 import { getAllChirps } from '../services/api-helper'
 import '../App.css'
-import Update from './Update'
 
 function Feed() {
     const [chirps, setChirps] = useState([])
