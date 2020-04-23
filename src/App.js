@@ -1,27 +1,30 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import "./App.css";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
-import Login from "./components/Login";
+
+export const AppContext = createContext()
 
 function App() {
-  
+
+  const [user, setUser] = useState('')
+
   return (
-    <div>
-      <Link to="/feed">
-        
-        <header >
+    <>
+      <header>
+        <Link to="/feed">
           <Button className="topNav" color="secondary">
             <i className="fab fa-earlybirds"></i>
-            </Button>
-        </header>
-        < Login/>
-      </Link>
-      <Main />
-      <Footer />
-      </div>
+          </Button>
+        </Link>
+      </header>
+      <AppContext.Provider value={ {user, setUser} }>
+        <Main />
+        <Footer />
+      </AppContext.Provider>
+    </>
   );
 }
 

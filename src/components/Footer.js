@@ -1,52 +1,54 @@
-import React, { useState } from "react";
-import { Navbar, NavbarBrand, Button, UncontrolledPopover, PopoverBody } from "reactstrap";
+import React, { useState, useContext } from "react";
+import { Navbar, NavItem, NavLink, Button, UncontrolledPopover, PopoverBody } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
-import '../App.css'
-import ChirpForm from './ChirpForm'
+import ChirpForm from "./ChirpForm";
+import { AppContext } from "../App";
+import "../App.css";
 
 function Footer() {
-    const [popoverOpen, setPopoverOpen] = useState(false);
+  const app = useContext(AppContext);
+  const [popoverOpen, setPopoverOpen] = useState(false);
 
-    const toggle = () => setPopoverOpen(!popoverOpen);
-    return (
-        <nav className="bottomNav">
-            <Navbar color="secondary" light expand="md"  >
+  const toggle = () => setPopoverOpen(!popoverOpen);
 
-
-                {/* <Link to="/create"> */}
-
-                <Button
-                    id="Popover1"
-                    type="button"
-                >
-                    <i className="fas fa-play">
-                        <UncontrolledPopover
-                            trigger="legacy"
-                            placement="top"
-                            isOpen={popoverOpen}
-                            target="Popover1"
-                            toggle={toggle}
-                        >
-                            <PopoverBody>
-                                {/* <NavbarBrand href="/create"> */}
-                                <ChirpForm />
-                                {/* </NavbarBrand> */}
-                            </PopoverBody>
-                        </UncontrolledPopover>
-                    </i>
-                </Button>
-
-                {/* </Link> */}
-
-
-                <NavbarBrand href="/users"><i className="fas fa-users"></i></NavbarBrand>
-                <Link to="/signup">
-                    <NavbarBrand href="/signup"><i className="fas fa-sign-in-alt"></i></NavbarBrand>
-                </Link>
-            </Navbar>
-        </nav >
-    )
+  return (
+    <footer className="bottomNav">
+      <Navbar color="secondary" light expand="md">
+        <NavItem>
+          <NavLink href="/login">
+            <i className="fas fa-sign-in-alt" />
+          </NavLink>
+        </NavItem>
+        <Button id="Popover1" type="button">
+          <i className="fas fa-play">
+            <UncontrolledPopover
+              trigger="legacy"
+              placement="top"
+              isOpen={popoverOpen}
+              target="Popover1"
+              toggle={toggle}
+            >
+              <PopoverBody>
+                <ChirpForm />
+              </PopoverBody>
+            </UncontrolledPopover>
+          </i>
+        </Button>
+        <NavItem>
+          <NavLink href="/feed">
+            <i className="footer-logo fab fa-earlybirds"></i>
+          </NavLink>
+        </NavItem>
+        {app.user && (
+          <NavItem>
+            <NavLink href={`/user/${app.user}`}>
+              <i className="fas fa-users" />
+            </NavLink>
+          </NavItem>
+        )}
+      </Navbar>
+    </footer>
+  );
 }
 
 export default Footer;

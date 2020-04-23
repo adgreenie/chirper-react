@@ -19,11 +19,9 @@ function Chirp({ chirp }) {
     const date = formatDate(chirp.date)
 
     const comments = chirp.comments.map((comment, i) => {
-        return (
-            <li>
-                <Comment key={i} id={comment} />
-            </li>
-        )
+
+        return <Comment key={i} id={comment} />
+
     })
 
 
@@ -65,14 +63,14 @@ function Chirp({ chirp }) {
 
 
                 <button
-                    id="Popover1"
+                    id="Popover2"
                     type="button"
                 >Add Comment
                     <UncontrolledPopover
                         trigger="legacy"
                         placement="top"
                         isOpen={popoverOpen}
-                        target="Popover1"
+                        target="Popover2"
                         toggle={toggle}
                     >
                         <PopoverBody>

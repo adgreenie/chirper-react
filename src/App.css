@@ -18,11 +18,8 @@ ul {
   text-align:center;
   padding-right:10%;
   padding-left:10%;
-  font-family:arial;
-  
-  
+  font-family:arial; 
 }
-
 
 ul>fas {
   color:black;
@@ -46,6 +43,13 @@ h4 {
   
 }
 
+h6 {
+  text-transform: capitalize;
+  font-size:14px;
+  color:blue;
+  font-variant: small-caps ;
+}
+
 i {
   z-index:10;
   text-align:left;
@@ -64,24 +68,24 @@ i {
   /* margin-top:-20px; */
   z-index: 10;
 }
+
 .fab{
   color:white;
   font-size: 40px;;
 }
+
 .bottomNav {
   position: fixed;
   bottom:0;
   width: 100%;
 }
+
 .fas{
 color:white;
 }
+
 .vl {
   border-left: 6px solid green;
-  height: 500px;
-}
-.vl {
-  border-right: 6px solid green;
   height: 500px;
 }
 
@@ -91,6 +95,10 @@ color:white;
 
 .tablet{
   display:none;
+}
+
+.footer-logo {
+  font-size: 1.5em;
 }
 
 #name {
@@ -110,7 +118,10 @@ h6 {
 
 
 
-@media(max-width:321px){
+
+
+@media(min-width:321px){
+
   .tablet{
     display: block;
     margin-left:10%;

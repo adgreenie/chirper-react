@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { createUser } from '../services/api-helper'
 
-function Sign() {
+function SignUp() {
 
     const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
@@ -68,4 +68,4 @@ function Sign() {
     )
 }
 
-export default Sign
+export default SignUp
