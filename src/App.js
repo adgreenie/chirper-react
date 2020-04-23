@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
 import Login from "./components/Login";
 
-function App() {
+function App(props) {
   
   return (
     <div>
