@@ -1,47 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import Chirp from './Chirp'
-import { getAllChirps } from '../services/api-helper'
-import { formatDate } from '../services/formatDate'
-import '../App.css'
-
+import React, { useState, useEffect } from "react";
+import Chirp from "./Chirp";
+import { getAllChirps } from "../services/api-helper";
+import "../App.css";
 
 function Feed() {
-    const [chirps, setChirps] = useState([])
-    const [allChirps, setAllChirps] = useState([])
+  const [chirps, setChirps] = useState([]);
 
-    useEffect(() => {
-        const makeAPICall = async () => {
-            const resp = await getAllChirps()
-            setChirps(resp)
-            setAllChirps(chirps.map((chirp, index) => {
-                return (
-                    <>
-                        <Chirp
-                            key={index}
-                            username={chirp.username}
-                            body={chirp.body}
-                            date={formatDate(chirp.date)}
-                            numLikes={chirp.numLikes}
-                            comments={chirp.comments}
-                            id={chirp._id}
-                        />
-                    </>
-                )
-            }))
-        }
-        makeAPICall()
-    }, [])
+  useEffect(() => {
+    const makeAPICall = async () => {
+      const resp = await getAllChirps();
+      setChirps(
+        resp.map((chirp, index) => {
+          return <Chirp key={index} chirp={chirp} />;
+        })
+      );
+    };
+    makeAPICall();
+  }, []);
 
-    return (
-        <>
-            <ul>
-                {allChirps}
-                this is the feed
-            </ul>
-            <br />
-            <br />
-        </>
-    )
+  return (
+    <>
+      <ul>{chirps}</ul>
+      <br />
+      <br />
+    </>
+  );
 }
 
-export default Feed
+export default Feed;
