@@ -52,7 +52,7 @@ function Login(props) {
             </FormGroup>
             <FormGroup>
               <Input
-                type="text"
+                type="password"
                 name="password"
                 id="exampleState"
                 placeholder="Password"
