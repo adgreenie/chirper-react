@@ -14,12 +14,14 @@ function Footer() {
 
     return (
         <footer className="bottomNav">
-            <Navbar className="footer-nav" color="secondary" light>
-                <NavItem>
-                    <Link to="/login">
-                        <i className="fas fa-sign-in-alt"><span className="loginText"> Click here to Login </span></i>
-                    </Link>
-                </NavItem>
+            <Navbar color="secondary" light expand="md">
+                <div className="mobile">
+                    <NavItem>
+                        <Link to="/login">
+                            <i className="fas fa-sign-in-alt" />
+                        </Link>
+                    </NavItem>
+                </div>
                 <Button id="Popover1" type="button">
                     <i className="fas fa-play"><span className="playSymbolText"> Click here to chirp </span>
                         <UncontrolledPopover
@@ -35,11 +37,13 @@ function Footer() {
                         </UncontrolledPopover>
                     </i>
                 </Button>
-                <NavItem>
-                    <Link to="/feed">
-                        <i className="footer-logo fab fa-earlybirds"><span className="feedBirdText">Live Feed</span></i>
-                    </Link>
-                </NavItem>
+                <div className="mobile">
+                    <NavItem>
+                        <Link to="/feed">
+                            <i className="footer-logo fab fa-earlybirds"></i>
+                        </Link>
+                    </NavItem>
+                </div>
                 {app.user && (
                     <NavItem>
                         <Link to={`/user/${app.user}`}>
