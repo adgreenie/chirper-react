@@ -7,14 +7,15 @@ import Userpage from "./Userpage";
 import Login from "./Login";
 import { Route, Switch } from "react-router-dom";
 import "../App.css";
+import { withRouter } from "react-router";
 
-function Main() {
+function Main(props) {
   return (
     <>
       <main className="mobile">
         <Switch>
           <Route exact path="/" component={SignUp} />
-          <Route path="/login" component={Login} />
+          <Route path="/login" render={routerProps => <Login {...routerProps} />}/>
           <Route path="/create" component={ChirpForm} />
           <Route path="/feed" component={Feed} />
           <Route
@@ -26,7 +27,7 @@ function Main() {
       <section className="desktopContainer">
         <aside className='desktop'>
           <ChirpForm />
-          <Login />
+          {!props.user && <Login  {...props}/>}
         </aside>
         <aside className='desktop'>
           <Feed />
@@ -36,4 +37,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default withRouter(Main);

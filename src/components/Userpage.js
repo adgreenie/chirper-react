@@ -3,6 +3,7 @@ import { Card, CardImg, CardTitle, CardBody, Button } from 'reactstrap'
 import Chirp from './Chirp'
 import { getUserByUsername, getChirpsByUsername, updateUser } from '../services/api-helper'
 import { AppContext } from "../App";
+import { Link } from "react-router-dom";
 
 function Userpage(props) {
   const app = useContext(AppContext);
@@ -13,6 +14,7 @@ function Userpage(props) {
   const [isFollowed, setIsFollowed] = useState(false);
 
   const username = props.match.params.user;
+  const isThisUser = (username === visitor.username)
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -25,18 +27,30 @@ function Userpage(props) {
       }
     };
     username ? makeAPICall() : setUser(false);
-  }, []);
+  }, [username]);
 
   const userChirps = chirps ? chirps.map((chirp, index) => {
     return <Chirp key={index} chirp={chirp} />;
   }) : ''
 
   const followers = user.followers ? user.followers.map((follower, i) => {
-    return <li key={i}>{follower}</li>
+    return (
+      <li key={i}>
+        <Link id="name" to={`/user/${follower}`}>
+          {follower}
+        </Link>
+      </li>
+    )
   }) : ''
 
   const following = user.following ? user.following.map((followed, i) => {
-    return <li key={i}>{followed}</li>
+    return (
+      <li key={i}>
+        <Link id="name" to={`/user/${followed}`}>
+          {followed}
+        </Link>
+      </li>
+    )
   }) : ''
 
   const handleFollow = () => {
@@ -44,6 +58,7 @@ function Userpage(props) {
     visitor.following.push(user.username)
     updateUser(user.username, user)
     updateUser(visitor.username, visitor)
+    setIsFollowed(true)
   }
 
   return (
@@ -54,7 +69,7 @@ function Userpage(props) {
           <ul className="follow">Followers: {followers}</ul>
           <div>
             <CardTitle>{user.username}</CardTitle>
-            {visitor && (
+            {visitor && !isThisUser && (
               <Button onClick={handleFollow} color="success">
                 {!isFollowed ? "Follow" : "Unfollow"} {user.username}
               </Button>

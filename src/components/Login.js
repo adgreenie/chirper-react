@@ -4,32 +4,16 @@ import { Col, Button, Form, FormGroup, Input } from "reactstrap";
 import { getAllUsers, getUserByUsername, validateUser } from "../services/api-helper";
 import { AppContext } from "../App";
 
-function Login() {
+function Login(props) {
   const app = useContext(AppContext);
   //set state in order to get user info and password
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  // const [userName, setUserName] = useState({
-  //   name:"",
-  //   password:""
-  // });
 
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   const { name, value } = e.target;
-  //   const userInput = e.target.value;
-  //   console.log('userInput',userInput)
-  //   setUserName({
-  //     ...userName,
-  //     // name is a variable, to show that it is a variable we tell JS to first get the value of the variable and replace the variable
-  //     [name]: value
-  //   })
-  // }
-
-  const handleChangeName = (userName) => {
-    userName.preventDefault();
-    setUserName(userName.target.value);
-    console.log("userName", userName);
+  const handleChangeName = username => {
+    username.preventDefault();
+    setUsername(username.target.value);
+    console.log("username", username);
   };
 
   const handleChangePassword = (userPassword) => {
@@ -38,14 +22,15 @@ function Login() {
     console.log("userPassword", userPassword);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    if (validateUser (userName, userPassword ) ){
-      const resp = await getUserByUsername(userName);
-      app.setUser(resp);
-      console.log('user set')
+    if (validateUser (username, userPassword)){
+      const user = await getUserByUsername(username)
+      app.setUser(user);
+      console.log('user set');
+      props.history.push(`/user/${username}`);
     }
-  }; validateUser()
+  }
 
   return (
     <>
@@ -62,7 +47,7 @@ function Login() {
                 placeholder="
                 User Name"
                 onChange={handleChangeName}
-                value= {userName.name}
+                value= {username.name}
               />
             </FormGroup>
             <FormGroup>
@@ -72,7 +57,7 @@ function Login() {
                 id="exampleState"
                 placeholder="Password"
                 onChange={handleChangePassword}
-                value={userName.password}
+                value={username.password}
               />
             </FormGroup>
             <Button>Login</Button>
