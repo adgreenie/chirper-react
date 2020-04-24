@@ -7,17 +7,19 @@ const api = axios.create({
 // User functions
 
 export const getAllUsers = async () => {
-    const resp = await api.get('/users/')
+    const resp = await api.get('/users')
     return resp.data
 }
 
 export const getUserByUsername = async (username) => {
-    const resp = await api.get(`/users/${username}`)
+    const resp = await api.get(`/users/username/${username}`)
+    console.log(resp.data)
     return resp.data
 }
 
 export const validateUser = async (username, password) => {
-    const resp = await api.get({"username": username, "password": password})
+    const resp = await api.get('/users/validate', {username: username, password: password})
+    console.log('api-helper - validateUser', {username: username, password: password})
     return resp.data
 }
 
@@ -29,7 +31,7 @@ export const createUser = async (user) => {
 export const updateUser = async (username, user) => {
     const resp = await api.put(`/users/${username}`, user)
     return resp.data
-}
+} 
 
 export const deleteUser = async (username) => {
     const resp = await api.delete(`/users/${username}`)
@@ -60,6 +62,7 @@ export const createChirp = async (chirp) => {
 
 export const updateChirp = async (id, chirp) => {
     const resp = await api.put(`/chirps/${id}`, chirp)
+    console.log('updateChirp', chirp)
     return resp.data
 }
 

@@ -23,7 +23,7 @@ function Footer() {
                     </NavItem>
                 </div>
                 <Button id="Popover1" type="button">
-                    <i className="fas fa-play">
+                    <i className="fas fa-play"><span className="playSymbolText"> Click here to chirp </span>
                         <UncontrolledPopover
                             trigger="legacy"
                             placement="top"

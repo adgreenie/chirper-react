@@ -56,10 +56,51 @@ i {
   color:black;
 }
 
+.chirp-body {
+  padding-top: 10px;
+}
+
+.chirp-button {
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.chirp-button-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .cardButtons{
   display:flex;
   justify-content:space-around;
   width: 100%;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-img {
+  object-fit: scale-down;
+  height: 100px;
+}
+
+.card-title {
+  font-size: 3em;
+}
+
+.userpage {
+  text-align: center;
+}
+
+.flex-follow {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.follow {
+  margin: 0;
+  padding: 0;
 }
 
 .topNav{
@@ -73,6 +114,12 @@ i {
   color:white;
   font-size: 40px;;
 }
+.fab>.feedBirdText{
+  visibility:hidden;
+}
+.fab:hover .feedBirdText{
+  visibility: visible;
+}
 
 .bottomNav {
   position: fixed;
@@ -83,7 +130,18 @@ i {
 .fas{
 color:white;
 }
-
+.fas>.playSymbolText{
+  visibility:hidden;
+}
+.fas:hover .playSymbolText{
+  visibility: visible;
+}
+.fas>.loginText{
+  visibility:hidden;
+}
+.fas:hover .loginText{
+  visibility: visible;
+}
 .vl {
   border-left: 6px solid green;
   height: 500px;
@@ -126,7 +184,9 @@ h6 {
   display:none;
 }
 
-
+#date-time {
+  color: grey;
+}
 
 @media(min-width:321px){
 

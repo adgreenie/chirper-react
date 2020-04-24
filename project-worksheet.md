@@ -39,7 +39,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Front end React app
 - Allow user to interact with the page
 - Mobile First
-- Displaying Comments
 - Creating New Posts
 - Getting All Posts
 - Deleting A Post
@@ -51,6 +50,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Additional Styling
 - Admin Pages
 - Favoriting Posts/Comments
+- Creating/Displaying Comments
 
 
 
@@ -78,31 +78,30 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-|Research| H | 4hrs|  | |
-| Create back end file structure | H | .5 | |
-| Create models for User, Chirp, and Comment | H | 1 | |
-| Set up GET route & controller to return all Users | H | .5 | |
+|Research| H | 4hrs| 6hr | 6hr|
+| Create back end file structure | H | .5 | .5| .5 |
+| Create models for User, Chirp, and Comment | H | 1 | 1| 1|
+| Set up GET route & controller to return all Users | H | .5 | .5 |
 | Set up connections for local testing, test with Postman | H | 1 | |
 | Set up & test additional GET/POST/PUT/DELETE routes & controllers for User | H | 2 | |
 | Set up & test GET/POST/PUT/DELETE routes & controllers for Chirp | H | 2 | |
 | Set up & test GET/POST/PUT/DELETE routes & controllers for Comment | H | 2 | |
 | Configure for deployment on Heroku | H | 1 | |
 | Set up MongoDB Atlas server & and deploy db on Heroku | H | 1 | |
-| Create helper file for front end | H | 1 | |
-| Debugging interaction with front end | H | 4 | |
-| Add additional functionality for postMVP goals | M | 4 | |
-| React Front End Setup | H | 8hrs|  |  |
-| React Components Organization/Creation| H | 8hrs | |
-| Logic for Components| H| 8hrs| | |
-| Deployment of Backend| H | 2 hrs|  | |
-| Deployment of Frontend| H | 1hr| | |
-| Communicate from Front to Backend | H | 4 hrs|  |  |
-| Responsive | H | 4 hours |  | |
+| Create helper file for front end | H | 1 | 1 | 1|
+| Debugging interaction with front end | H | 4 | 8 | 8|
+| Add additional functionality for postMVP goals | M | 4 | 8 | 8 |
+| React Front End Setup | H | 8hrs| 6 | 6 |
+| React Components Organization/Creation| H | 8hrs | 8| 8|
+| Logic for Components| H| 8hrs|6 | 6|
+| Deployment of Backend| H | 2 hrs| 1 | 1 |
+| Deployment of Frontend| H | 1hr| .5 | .5|
+| Communicate from Front to Backend | H | 4 hrs| 1 | 1 |
+| Responsive | H | 4 hours | 2 | 2 |
 | Total | H | 60hrs |  | |
 
 ## Additional Libraries
 ReactStrap/ BootStrap
-Heroku
 
 ## Code Snippet
 
