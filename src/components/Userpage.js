@@ -61,6 +61,14 @@ function Userpage(props) {
     setIsFollowed(true)
   }
 
+  const handleUnfollow = () => {
+    user.followers.splice(user.followers.indexOf(visitor), 1)
+    visitor.following.splice(visitor.followers.indexOf(user), 1)
+    updateUser(user.username, user)
+    updateUser(visitor.username, visitor)
+    setIsFollowed(false)
+  }
+
   return (
     <div className="userpage">
       <Card>
@@ -70,7 +78,9 @@ function Userpage(props) {
           <div>
             <CardTitle>{user.username}</CardTitle>
             {visitor && !isThisUser && (
-              <Button onClick={handleFollow} color="success">
+              <Button
+                onClick={!isFollowed ? handleFollow : handleUnfollow}
+                color={!isFollowed ? "primary" : "success"}>
                 {!isFollowed ? "Follow" : "Unfollow"} {user.username}
               </Button>
             )}
