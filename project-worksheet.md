@@ -92,8 +92,8 @@ All times below are listed in hours:
 | Configure for deployment on Heroku | H | 1 | .5 | .5 |
 | Set up MongoDB Atlas server & and deploy db on Heroku | H | 1 | .5 | .5 |
 | Create helper file for front end | H | 1 | 1 | 1 |
-| Add additional functionality on back end for postMVP goals | M | 4 | 5 | 5 |
-| Debugging interaction with front end | H | 4 | 8 | 8 |
+| Add additional functionality on back end for postMVP goals | M | 4 | 4 | 4 |
+| Debugging interaction with front end | H | 4 | 5 | 5 |
 | React Components Organization | H | 4 | 5 | 5 |
 | Logic for Chirp and Comment Components | H | 4 | 3 | 3 |
 | Populate Feed with Chirps | H | 2 | 2 | 2 |
@@ -106,7 +106,7 @@ All times below are listed in hours:
 | Make Site Responsive | H | 4 | 2 | 2 |
 | Add additional functionality on front end for postMVP goals | M | 4 | 2 | 2 |
 | Additional styling | M | 4 | 1 | 1 |
-| Total | H | 64 | 67 | 67 |
+| Total | H | 64 | 69 | 69 |
 
 ## Additional Libraries
 ReactStrap/ BootStrap
