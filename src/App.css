@@ -3,7 +3,7 @@ html {
 }
 
 main {
-  padding: 50px 0;
+  padding: 70px 0;
 }
 
 section {
@@ -33,11 +33,6 @@ button {
   height:50px;
 }
 
-/* nav{
-  overflow:hidden;
-  position:fixed;
-} */
-
 h4 {
   text-decoration:none;
   
@@ -54,6 +49,10 @@ i {
   z-index:10;
   text-align:left;
   color:black;
+}
+
+.nav-item {
+  margin: 0 10vw;
 }
 
 .chirp-body {
@@ -196,14 +195,10 @@ h6 {
   color: grey;
 }
 
-@media(min-width:321px){
+@media(min-width:768px){
 
-  .tablet{
-    display: block;
-    margin-left:10%;
-    margin-right:10%;
-    border: 2px;
-    border-color: rgba(red, green, blue, alpha)
+  .navbar {
+    justify-content: space-evenly;
   }
   
 }
@@ -226,6 +221,4 @@ h6 {
     display:flex;
     height:700px;
   }
-
- 
 }
