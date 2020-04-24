@@ -76,30 +76,37 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
+All times below are listed in hours:
+
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-|Research| H | 4hrs| 6hr | 6hr|
-| Create back end file structure | H | .5 | .5| .5 |
+| Research | H | 4 | 6 | 6 |
+| Create back end file structure | H | .5 | .5 | .5 |
 | Create models for User, Chirp, and Comment | H | 1 | 1 | 1 |
 | Seed data into local database | H | 1 | 3 | 3 |
 | Set up GET route & controller to return all Users | H | .5 | .5 | .5 |
-| Set up connections for local testing, test with Postman | H | 1 | |
-| Set up & test additional GET/POST/PUT/DELETE routes & controllers for User | H | 2 | |
-| Set up & test GET/POST/PUT/DELETE routes & controllers for Chirp | H | 2 | |
-| Set up & test GET/POST/PUT/DELETE routes & controllers for Comment | H | 2 | |
-| Configure for deployment on Heroku | H | 1 | |
-| Set up MongoDB Atlas server & and deploy db on Heroku | H | 1 | |
-| Create helper file for front end | H | 1 | 1 | 1|
-| Debugging interaction with front end | H | 4 | 8 | 8|
-| Add additional functionality for postMVP goals | M | 4 | 8 | 8 |
-| React Front End Setup | H | 8hrs| 6 | 6 |
-| React Components Organization/Creation| H | 8hrs | 8| 8|
-| Logic for Components| H| 8hrs|6 | 6|
-| Deployment of Backend| H | 2 hrs| 1 | 1 |
-| Deployment of Frontend| H | 1hr| .5 | .5|
-| Communicate from Front to Backend | H | 4 hrs| 1 | 1 |
-| Responsive | H | 4 hours | 2 | 2 |
-| Total | H | 60hrs |  | |
+| Set up connections for local testing, test with Postman | H | 1 | .5 | .5 |
+| Set up & test additional GET/POST/PUT/DELETE routes & controllers for User | H | 2 | 4 | 4 |
+| Set up & test GET/POST/PUT/DELETE routes & controllers for Chirp | H | 2 | 2 | 2 |
+| Set up & test GET/POST/PUT/DELETE routes & controllers for Comment | H | 2 | 1 | 1 |
+| Configure for deployment on Heroku | H | 1 | .5 | .5 |
+| Set up MongoDB Atlas server & and deploy db on Heroku | H | 1 | .5 | .5 |
+| Create helper file for front end | H | 1 | 1 | 1 |
+| Add additional functionality on back end for postMVP goals | M | 4 | 5 | 5 |
+| Debugging interaction with front end | H | 4 | 8 | 8 |
+| React Components Organization | H | 4 | 5 | 5 |
+| Logic for Chirp and Comment Components | H | 4 | 3 | 3 |
+| Populate Feed with Chirps | H | 2 | 2 | 2 |
+| Logic for Login and Signup Components | H | 4 | 5 | 5 |
+| Logic for Userpage Component | H | 3 | 4 | 4 |
+| Create Navbar and Route Components | H | 3 | 4 | 4 |
+| Basic Styling | H | 3 | 3 | 3 |
+| Deployment of Frontend | H | 1 | .5 | .5 |
+| Debugging Deployed Frontend | H | 1 | 3 | 3 |
+| Make Site Responsive | H | 4 | 2 | 2 |
+| Add additional functionality on front end for postMVP goals | M | 4 | 2 | 2 |
+| Additional styling | M | 4 | 1 | 1 |
+| Total | H | 64 | 67 | 67 |
 
 ## Additional Libraries
 ReactStrap/ BootStrap
