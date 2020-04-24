@@ -23,7 +23,7 @@ function Userpage(props) {
       setUser(userResp);
       setChirps(chirpResp);
       if (visitor) {
-        setIsFollowed(visitor.following.includes(user._id))
+        setIsFollowed(visitor.following.includes(user.username))
       }
     };
     username ? makeAPICall() : setUser(false);
