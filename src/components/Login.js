@@ -40,16 +40,12 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('userName',userName)
-    console.log('userPassword',userPassword)
-    const validated = await validateUser(userName, userPassword)
-    console.log('validated',validated)
-    if (validated) {
+    if (validateUser (userName, userPassword ) ){
       const resp = await getUserByUsername(userName);
       app.setUser(resp);
       console.log('user set')
     }
-  };
+  }; validateUser()
 
   return (
     <>
@@ -66,7 +62,7 @@ function Login() {
                 placeholder="
                 User Name"
                 onChange={handleChangeName}
-                // value= {userName.name}
+                value= {userName.name}
               />
             </FormGroup>
             <FormGroup>
@@ -76,7 +72,7 @@ function Login() {
                 id="exampleState"
                 placeholder="Password"
                 onChange={handleChangePassword}
-                // value={userName.password}
+                value={userName.password}
               />
             </FormGroup>
             <Button>Login</Button>

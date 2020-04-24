@@ -17,11 +17,11 @@ function Footer() {
             <Navbar className="footer-nav" color="secondary" light>
                 <NavItem>
                     <Link to="/login">
-                        <i className="fas fa-sign-in-alt" />
+                        <i className="fas fa-sign-in-alt"><span className="loginText"> Click here to Login </span></i>
                     </Link>
                 </NavItem>
                 <Button id="Popover1" type="button">
-                    <i className="fas fa-play">
+                    <i className="fas fa-play"><span className="playSymbolText"> Click here to chirp </span>
                         <UncontrolledPopover
                             trigger="legacy"
                             placement="top"
@@ -37,7 +37,7 @@ function Footer() {
                 </Button>
                 <NavItem>
                     <Link to="/feed">
-                        <i className="footer-logo fab fa-earlybirds"></i>
+                        <i className="footer-logo fab fa-earlybirds"><span className="feedBirdText">Live Feed</span></i>
                     </Link>
                 </NavItem>
                 {app.user && (
