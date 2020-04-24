@@ -44,7 +44,7 @@ function Login() {
       const resp = await getUserByUsername(userName);
       app.setUser(resp);
     }
-  };validateUser()
+  }; validateUser()
 
   return (
     <>
