@@ -56,6 +56,20 @@ i {
   color:black;
 }
 
+.chirp-body {
+  padding-top: 10px;
+}
+
+.chirp-button {
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.chirp-button-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .cardButtons{
   display:flex;
   justify-content:space-around;
@@ -170,7 +184,9 @@ h6 {
   display:none;
 }
 
-
+#date-time {
+  color: grey;
+}
 
 @media(min-width:321px){
 
