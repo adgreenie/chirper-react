@@ -13,11 +13,13 @@ export const getAllUsers = async () => {
 
 export const getUserByUsername = async (username) => {
     const resp = await api.get(`/users/username/${username}`)
+    console.log(resp.data)
     return resp.data
 }
 
 export const validateUser = async (username, password) => {
-    const resp = await api.get('/users/validate', {"username": username, "password": password})
+    const resp = await api.get('/users/validate', {username: username, password: password})
+    console.log('api-helper - validateUser', {username: username, password: password})
     return resp.data
 }
 
@@ -60,6 +62,7 @@ export const createChirp = async (chirp) => {
 
 export const updateChirp = async (id, chirp) => {
     const resp = await api.put(`/chirps/${id}`, chirp)
+    console.log('updateChirp', chirp)
     return resp.data
 }
 

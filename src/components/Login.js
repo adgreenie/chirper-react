@@ -40,9 +40,14 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateUser({ username: userName, password: userPassword })) {
+    console.log('userName',userName)
+    console.log('userPassword',userPassword)
+    const validated = await validateUser(userName, userPassword)
+    console.log('validated',validated)
+    if (validated) {
       const resp = await getUserByUsername(userName);
       app.setUser(resp);
+      console.log('user set')
     }
   };
 

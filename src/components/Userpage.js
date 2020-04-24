@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import {
-  Card, Col, CardImg, CardTitle, CardText,
-  CardSubtitle, CardBody, Row
-} from 'reactstrap'
+import React, { useEffect, useState, useContext } from 'react'
+import { Card, CardImg, CardTitle, CardBody, Button } from 'reactstrap'
 import Chirp from './Chirp'
-import { getUserByUsername, getChirpsByUsername } from '../services/api-helper'
+import { getUserByUsername, getChirpsByUsername, updateUser } from '../services/api-helper'
+import { AppContext } from "../App";
 
 function Userpage(props) {
+  const app = useContext(AppContext);
+  const visitor = app.user
+
   const [user, setUser] = useState([]);
   const [chirps, setChirps] = useState([]);
+  const [isFollowed, setIsFollowed] = useState(false);
+
   const username = props.match.params.user;
 
   useEffect(() => {
@@ -17,6 +20,9 @@ function Userpage(props) {
       const chirpResp = await getChirpsByUsername(username);
       setUser(userResp);
       setChirps(chirpResp);
+      if (visitor) {
+        setIsFollowed(visitor.following.includes(user._id))
+      }
     };
     username ? makeAPICall() : setUser(false);
   }, []);
@@ -25,36 +31,40 @@ function Userpage(props) {
     return <Chirp key={index} chirp={chirp} />;
   }) : ''
 
+  const followers = user.followers ? user.followers.map((follower, i) => {
+    return <li key={i}>{follower}</li>
+  }) : ''
+
+  const following = user.following ? user.following.map((followed, i) => {
+    return <li key={i}>{followed}</li>
+  }) : ''
+
+  const handleFollow = () => {
+    user.followers.push(visitor.username)
+    visitor.following.push(user.username)
+    updateUser(user.username, user)
+    updateUser(visitor.username, visitor)
+  }
+
   return (
-    <>
-      {user && (
-        <div>
-          <Col>
-            <Card body outline color="warning">
-              <CardImg
-                top
-                width="100%"
-                src="/assets/318x180.svg"
-                alt="Card image cap"
-              />
-              <CardBody>
-                <CardTitle>{user.username}</CardTitle>
-                <CardSubtitle>
-                  Followers : {user.followers} Following : {user.following}
-                </CardSubtitle>
-                <CardText>User ID : {user._id}</CardText>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col>
-            <Row></Row>
-            <Card body outline color="danger">
-              {userChirps}
-            </Card>
-          </Col>
-        </div>
-      )}
-    </>
+    <div className="userpage">
+      <Card>
+        <CardImg src={user.image} alt="User Image" />
+        <CardBody className="flex-follow">
+          <ul className="follow">Followers: {followers}</ul>
+          <div>
+            <CardTitle>{user.username}</CardTitle>
+            {visitor && (
+              <Button onClick={handleFollow} color="success">
+                {!isFollowed ? "Follow" : "Unfollow"} {user.username}
+              </Button>
+            )}
+          </div>
+          <ul className="follow">Following: {following}</ul>
+        </CardBody>
+      </Card>
+      <ul>{userChirps}</ul>
+    </div>
   );
 }
 
