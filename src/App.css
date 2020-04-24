@@ -3,7 +3,7 @@ html {
 }
 
 main {
-  padding-top: 50px;
+  padding: 50px 0;
 }
 
 section {
@@ -68,6 +68,14 @@ i {
 .chirp-button-row {
   display: flex;
   justify-content: space-evenly;
+}
+
+.comment-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 .cardButtons{
