@@ -42,7 +42,7 @@ function Sign() {
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleText"></Label>
-                        <Input type="text" name="text" id="exampleText" placeholder="Enter a Strong Password"
+                        <Input type="password" name="text" id="exampleText" placeholder="Enter a Password"
                             onChange={handlePassword} value={password}
                         />
 
