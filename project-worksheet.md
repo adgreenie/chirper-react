@@ -80,8 +80,9 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 |Research| H | 4hrs| 6hr | 6hr|
 | Create back end file structure | H | .5 | .5| .5 |
-| Create models for User, Chirp, and Comment | H | 1 | 1| 1|
-| Set up GET route & controller to return all Users | H | .5 | .5 |
+| Create models for User, Chirp, and Comment | H | 1 | 1 | 1 |
+| Seed data into local database | H | 1 | 3 | 3 |
+| Set up GET route & controller to return all Users | H | .5 | .5 | .5 |
 | Set up connections for local testing, test with Postman | H | 1 | |
 | Set up & test additional GET/POST/PUT/DELETE routes & controllers for User | H | 2 | |
 | Set up & test GET/POST/PUT/DELETE routes & controllers for Chirp | H | 2 | |
