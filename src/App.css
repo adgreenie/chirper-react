@@ -73,6 +73,12 @@ i {
   color:white;
   font-size: 40px;;
 }
+.fab>.feedBirdText{
+  visibility:hidden;
+}
+.fab:hover .feedBirdText{
+  visibility: visible;
+}
 
 .bottomNav {
   position: fixed;
@@ -83,7 +89,18 @@ i {
 .fas{
 color:white;
 }
-
+.fas>.playSymbolText{
+  visibility:hidden;
+}
+.fas:hover .playSymbolText{
+  visibility: visible;
+}
+.fas>.loginText{
+  visibility:hidden;
+}
+.fas:hover .loginText{
+  visibility: visible;
+}
 .vl {
   border-left: 6px solid green;
   height: 500px;
