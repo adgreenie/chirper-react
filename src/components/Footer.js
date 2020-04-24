@@ -46,7 +46,7 @@ function Footer() {
                 </div>
                 {app.user && (
                     <NavItem>
-                        <Link to={`/user/${app.user}`}>
+                        <Link to={`/user/${app.user.username}`}>
                             <i className="fas fa-users" />
                         </Link>
                     </NavItem>
