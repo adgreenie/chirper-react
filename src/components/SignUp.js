@@ -33,7 +33,7 @@ function Sign() {
             <Col>
                 <Form onSubmit={handleCreateUser}>
                     <FormGroup>
-                        <Label for="exampleEmail">Thank For Joining Us!</Label>
+                        <Label for="exampleEmail">Thank You For Joining Us!</Label>
                         <Input type="text"
                             name="email"
                             id="exampleEmail"
