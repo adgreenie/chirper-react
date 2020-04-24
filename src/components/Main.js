@@ -23,11 +23,15 @@ function Main() {
           />
         </Switch>
       </main>
-      <aside className='desktop'>
-        {/* <Feed /> */}
-        <ChirpForm />
-        <SignUp />
-      </aside>
+      <section className="desktopContainer">
+        <aside className='desktop'>
+          <ChirpForm />
+          <Login />
+        </aside>
+        <aside className='desktop'>
+          <Feed />
+        </aside>
+      </section>
     </>
   );
 }
