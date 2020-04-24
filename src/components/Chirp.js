@@ -75,7 +75,7 @@ function Chirp({ chirp }) {
             </button>
           </div>
           <hr />
-          <ul>{comments}</ul>
+          <ul className="comment-list">{comments}</ul>
           <hr />
         </>
       )}
