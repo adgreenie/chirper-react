@@ -7,17 +7,17 @@ const api = axios.create({
 // User functions
 
 export const getAllUsers = async () => {
-    const resp = await api.get('/users/')
+    const resp = await api.get('/users')
     return resp.data
 }
 
 export const getUserByUsername = async (username) => {
-    const resp = await api.get(`/users/${username}`)
+    const resp = await api.get(`/users/username/${username}`)
     return resp.data
 }
 
 export const validateUser = async (username, password) => {
-    const resp = await api.get({"username": username, "password": password})
+    const resp = await api.get('/users/validate', {"username": username, "password": password})
     return resp.data
 }
 
