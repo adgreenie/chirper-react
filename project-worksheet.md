@@ -106,7 +106,7 @@ All times below are listed in hours:
 | Make Site Responsive | H | 4 | 2 | 2 |
 | Add additional functionality on front end for postMVP goals | M | 4 | 2 | 2 |
 | Additional styling | M | 4 | 1 | 1 |
-| Total | H | 64 | 69 | 69 |
+| Total | H | 64 | 64 | 64 |
 
 ## Additional Libraries
 ReactStrap/ BootStrap
