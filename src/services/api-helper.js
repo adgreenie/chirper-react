@@ -16,8 +16,8 @@ export const getUserByUsername = async (username) => {
     return resp.data
 }
 
-export const validateUser = async (username, password) => {
-    const resp = await api.get({"username": username, "password": password})
+export const validateUser = async (userName, password) => {
+    const resp = await api.get({"username": userName, "password": password})
     return resp.data
 }
 
