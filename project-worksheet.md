@@ -103,10 +103,10 @@ All times below are listed in hours:
 | Basic Styling | H | 3 | 3 | 3 |
 | Deployment of Frontend | H | 1 | .5 | .5 |
 | Debugging Deployed Frontend | H | 1 | 3 | 3 |
-| Make Site Responsive | H | 4 | 2 | 2 |
+| Make Site Responsive | H | 3 | 2 | 2 |
 | Add additional functionality on front end for postMVP goals | M | 4 | 2 | 2 |
 | Additional styling | M | 4 | 1 | 1 |
-| Total | H | 64 | 64 | 64 |
+| Total | H | 65 | 64 | 64 |
 
 ## Additional Libraries
 ReactStrap/ BootStrap
