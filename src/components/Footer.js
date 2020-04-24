@@ -14,7 +14,7 @@ function Footer() {
 
     return (
         <footer className="bottomNav">
-            <Navbar color="secondary" light expand="md">
+            <Navbar className="footer-nav" color="secondary" light>
                 <NavItem>
                     <Link to="/login">
                         <i className="fas fa-sign-in-alt"><span className="loginText"> Click here to Login </span></i>

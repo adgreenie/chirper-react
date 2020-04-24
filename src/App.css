@@ -62,6 +62,33 @@ i {
   width: 100%;
 }
 
+.card {
+  margin-bottom: 20px;
+}
+
+.card-img {
+  object-fit: scale-down;
+  height: 100px;
+}
+
+.card-title {
+  font-size: 3em;
+}
+
+.userpage {
+  text-align: center;
+}
+
+.flex-follow {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.follow {
+  margin: 0;
+  padding: 0;
+}
+
 .topNav{
   position: fixed;
   width: 100%;

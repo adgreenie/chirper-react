@@ -43,6 +43,7 @@ function Login() {
     if (validateUser (userName, userPassword ) ){
       const resp = await getUserByUsername(userName);
       app.setUser(resp);
+      console.log('user set')
     }
   }; validateUser()
 
